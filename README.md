@@ -68,15 +68,15 @@ Please use the following command to install on your server:
 
 ## install
 ```
-sudo bash -c "$(curl -sL https://github.com/sinamirtech1/holderbot/raw/main/holderbot.sh)"
+sudo bash -c "$(curl -sL https://github.com/Alfred-13/alfred-holderbot/raw/main/holderbot.sh)"
 ```
 ## restart
 ```
-sudo bash -c "$(curl -sL https://github.com/sinamirtech1/holderbot/raw/main/restart.sh)"
+sudo bash -c "$(curl -sL https://github.com/Alfred-13/alfred-holderbot/raw/main/restart.sh)"
 ```
 ## uninstall
 ```
-sudo bash -c "$(curl -sL https://github.com/sinamirtech1/holderbot/raw/main/uninstall.sh)"
+sudo bash -c "$(curl -sL https://github.com/Alfred-13/alfred-holderbot/raw/main/uninstall.sh)"
 ```
 
 # How to use the bot? (video) # 
