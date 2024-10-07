@@ -21,7 +21,7 @@
 
 
 
-Please use the following command to install on your server:
+برای نصب از دستور زیر استفاده کنید :
 
 ## install
 ```
