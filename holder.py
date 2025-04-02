@@ -272,7 +272,7 @@ async def holderbot(client: Client, message: Message) :
 
                 if CHECK_STEP == "nodes | wait to select node" :
                     
-                    if re.match('\(\s*(\d+)\s*\)\s*([^-]+)\s*-\s*([^-]+)', MESSAGE_TEXT) :
+                    if re.match(r"\(\s*(\d+)\s*\)\s*([^-]+)\s*-\s*([^-]+)", MESSAGE_TEXT):
                         await client.send_message(chat_id=MESSAGE_CHATID , text=f"<b>You have chosen {MESSAGES_SPLIT[3]} server.\nwhat operation do you need?</b>" , reply_markup=KEYBOARD_NODE)
                         UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,f"nodes | select node {MESSAGES_SPLIT[1]}")
 
@@ -371,7 +371,7 @@ async def holderbot(client: Client, message: Message) :
                                 await client.send_message(chat_id=MESSAGE_CHATID , text="<b>Please enter data limit (GB).\nlike : <code>25.5</code>, <code>15</code>, <code>0.5</code>, <code>100</code></b>" , reply_markup=KEYBOARD_CANCEL , parse_mode=enums.ParseMode.HTML)
                                 UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,f"templates | add template {MESSAGE_TEXT}")
                             
-                            elif len(STEP_SPLIT) == 5 and len(MESSAGES_SPLIT) == 1 and re.match("^\d*\.?\d+$" , MESSAGE_TEXT) :
+                            elif len(STEP_SPLIT) == 5 and len(MESSAGES_SPLIT) == 1 and re.match(r"^\d*\.?\d+$", MESSAGE_TEXT):
                                 TEMPLATE_NAME = STEP_SPLIT[4]
                                 await client.send_message(chat_id=MESSAGE_CHATID , text="<b>Please enter date limit (days).\nLike : <code>1</code>, <code>15</code>, <code>75</code>, <code>150</code></b>" , reply_markup=KEYBOARD_CANCEL , parse_mode=enums.ParseMode.HTML)
                                 UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,f"templates | add template {TEMPLATE_NAME} {float(MESSAGE_TEXT)}")
@@ -445,7 +445,7 @@ async def holderbot(client: Client, message: Message) :
                                 await client.send_message(chat_id=MESSAGE_CHATID , text="<b>Please enter data limit (GB).\nlike : <code>25.5</code>, <code>15</code>, <code>0.5</code>, <code>100</code></b></b>" , reply_markup=KEYBOARD_CANCEL , parse_mode=enums.ParseMode.HTML)
                                 UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,f"create | manual {MESSAGE_TEXT}")
 
-                            elif len(MESSAGES_SPLIT) == 1 and len(STEP_SPLIT) == 4 and re.match("^\d*\.?\d+$" , MESSAGE_TEXT) :
+                            elif len(MESSAGES_SPLIT) == 1 and len(STEP_SPLIT) == 4 and re.match(r"^\d*\.?\d+$", MESSAGE_TEXT):
                                 USERNAME = STEP_SPLIT[3]
                                 await client.send_message(chat_id=MESSAGE_CHATID , text="<b>Please enter date limit (days).\nLike : <code>1</code>, <code>15</code>, <code>75</code>, <code>150</code></b>" , reply_markup=KEYBOARD_CANCEL , parse_mode=enums.ParseMode.HTML)
                                 UPDATE_STEP = DEF_UPDATE_STEP(MESSAGE_CHATID,f"create | manual {USERNAME} {MESSAGE_TEXT}")
